@@ -1,16 +1,18 @@
 import Head from 'next/head';
+import HomeContainer from '../containers/Home';
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Flavor Stories</title>
+        <title>Marvel Stories</title>
         <meta
           name='description'
-          content='Flavor stories official website. Every flavor has a story behind it. Taste various flavor based on flavor stories recipe'
+          content='Marvel stories is a comic app integrated with Marvel Comics API'
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <HomeContainer />
     </div>
   );
 }
