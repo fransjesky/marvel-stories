@@ -21,7 +21,7 @@ function Card({ image, title, copyright }) {
       },
       '&:hover': {
         cursor: 'pointer',
-        transform: 'translateY(-4px)',
+        transform: 'translateY(-0.25rem)',
         boxShadow:
           '0 1rem 1.875rem rgba(0, 0, 0, 0.25), 0 0.625rem 0.625rem rgba(0, 0, 0, 0.25)',
       },
