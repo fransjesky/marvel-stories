@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import Card from '../../components/Card';
 import { Box, Grid } from '@mui/material';
+import Slider from '../../components/Slider';
+
+import sliderData from '../../data/sliderData';
 
 // redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,7 +20,8 @@ function HomeContainer() {
 
   return (
     <Box>
-      <Grid container spacing={2}>
+      <Slider data={sliderData} />
+      {/* <Grid container spacing={2}>
         {list?.results?.map((value, index) => {
           return (
             <Grid item key={index}>
@@ -28,7 +32,7 @@ function HomeContainer() {
             </Grid>
           );
         })}
-      </Grid>
+      </Grid> */}
     </Box>
   );
 }
