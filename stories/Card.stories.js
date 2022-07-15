@@ -7,8 +7,8 @@ export default {
 
 export const Default = () => (
   <Card
-    image='/assets/sample.jpg'
-    title='Card Default'
-    desc='This is an example for default variant of card component'
+    image='/assets/sample.jpeg'
+    title='Avengers: Infinity Saga'
+    copyright='© 2022 MARVEL'
   />
 );
