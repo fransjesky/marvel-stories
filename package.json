@@ -1,5 +1,5 @@
 {
-  "name": "flavor-stories",
+  "name": "marvel-stories",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,14 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook -s ./public"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.0",
     "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
