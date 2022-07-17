@@ -14,6 +14,21 @@ const sliderData = [
     name: 'Thor',
     desc: `The son of Odin uses his mighty abilities as the God of Thunder to protect his home Asgard and planet Earth alike.`,
   },
+  {
+    image: '/images/hulk.jpeg',
+    name: 'Hulk',
+    desc: `Dr. Bruce Banner lives a life caught between the soft-spoken scientist he’s always been and the uncontrollable green monster powered by his rage.`,
+  },
+  {
+    image: '/images/blackwidow.jpeg',
+    name: 'Black Widow',
+    desc: `Natasha Romanoff, separated from the now-fractured Avengers, confronts the dark path she took to becoming a spy and assassin, as well as events that followed.`,
+  },
+  {
+    image: '/images/hawkeye.jpeg',
+    name: 'Hawkeye',
+    desc: `A master marksman and longtime friend of Black Widow, Clint Barton serves as the Avengers’ amazing archer.`,
+  },
 ];
 
 export default sliderData;
