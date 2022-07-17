@@ -7,7 +7,7 @@ export default {
 
 export const Default = () => (
   <Card
-    image='/assets/sample.jpeg'
+    image='/images/sample.jpeg'
     title='Avengers: Infinity Saga'
     copyright='© 2022 MARVEL'
   />
