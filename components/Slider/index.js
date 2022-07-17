@@ -11,12 +11,11 @@ import 'swiper/css/effect-fade';
 function Slider({ data }) {
   const styleSheets = {
     image: {
-      height: '70vh',
-      width: '100vw',
+      height: '100vh',
+      width: '100%',
       position: 'relative',
     },
     contents: {
-      width: '40vw',
       position: 'absolute',
       bottom: '5%',
       left: '5%',
@@ -25,12 +24,12 @@ function Slider({ data }) {
     },
     name: {
       color: '#ffffff',
-      fontSize: '2rem',
+      fontSize: '1.25rem',
       fontWeight: '700',
     },
     desc: {
       color: '#ffffff',
-      fontSize: '1rem',
+      fontSize: '0.75rem',
     },
   };
 

@@ -6,9 +6,7 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <Box component='main' sx={{ paddingTop: '5rem' }}>
-        {children}
-      </Box>
+      <Box component='main'>{children}</Box>
     </>
   );
 }

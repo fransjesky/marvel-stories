@@ -5,6 +5,7 @@ import { Box, Typography } from '@mui/material';
 function Card({ image, title, copyright }) {
   const styleSheets = {
     container: {
+      margin: '0 auto',
       width: '12.5rem',
       height: '20rem',
       overflow: 'hidden',
