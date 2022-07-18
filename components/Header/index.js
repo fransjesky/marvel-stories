@@ -2,9 +2,15 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
+import useScroll from '../../hooks/useScroll';
+
+// data
 import navigation from '../../data/navigation';
 
 function Header() {
+  // initialize hook
+  const scroll = useScroll();
+
   const styleSheets = {
     header: {
       height: '5rem',
@@ -12,6 +18,8 @@ function Header() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
+      backgroundColor: scroll > 15 ? '#202020' : 'transparent',
+      transition: 'all 0.3s ease',
       position: 'fixed',
       top: '0',
       zIndex: '999',
