@@ -13,10 +13,11 @@ function Header() {
 
   const styleSheets = {
     header: {
-      height: '5rem',
+      height: '5.5rem',
       width: '100%',
       display: 'flex',
-      justifyContent: 'space-between',
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
       alignItems: 'center',
       backgroundColor: scroll > 15 ? '#202020' : 'transparent',
       transition: 'all 0.3s ease',
@@ -37,7 +38,7 @@ function Header() {
     link: {
       margin: '0 1rem',
       color: '#ffffff',
-      fontSize: '0.75rem',
+      fontSize: '0.6rem',
       fontWeight: '700',
       letterSpacing: '0.125rem',
       textTransform: 'uppercase',
