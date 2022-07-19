@@ -1,13 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  Box,
-  Typography,
-  Input,
-  InputLabel,
-  InputAdornment,
-} from '@mui/material';
+import { Box, Typography, Input, InputAdornment } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import useScroll from '../../hooks/useScroll';
 
 // data
@@ -20,6 +15,13 @@ import SearchIcon from '@mui/icons-material/Search';
 function Header() {
   // initialize hook
   const scroll = useScroll();
+
+  // theme
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
 
   const styleSheets = {
     header: {
@@ -36,6 +38,7 @@ function Header() {
       zIndex: '999',
     },
     github: {
+      height: '5.5rem',
       display: 'flex',
       alignItems: 'center',
     },
@@ -45,7 +48,9 @@ function Header() {
     },
     githubText: {
       color: '#ffffff',
-      fontSize: '0.75rem',
+      fontSize: '0.55rem',
+      fontWeight: '700',
+      letterSpacing: '0.125rem',
     },
     main: {
       height: '100%',
@@ -75,51 +80,57 @@ function Header() {
   };
 
   return (
-    <Box sx={styleSheets.header}>
-      <Box sx={styleSheets.github}>
-        <GitHubIcon fontSize='small' sx={styleSheets.githubIcon} />
-        <Typography sx={styleSheets.githubText}>
-          github.com/fransjesky
-        </Typography>
-      </Box>
-      <Box sx={styleSheets.main}>
-        <Link href='/'>
+    <ThemeProvider theme={darkTheme}>
+      <Box sx={styleSheets.header}>
+        <Link href='https://github.com/fransjesky' passHref>
           <a>
-            <Box sx={styleSheets.imageContainer}>
-              <Image
-                src='/logo.svg'
-                layout='fill'
-                objectFit='contain'
-                priority
-                quality={100}
-              />
+            <Box sx={styleSheets.github}>
+              <GitHubIcon fontSize='small' sx={styleSheets.githubIcon} />
+              <Typography sx={styleSheets.githubText}>
+                github.com/fransjesky
+              </Typography>
             </Box>
           </a>
         </Link>
-        <Box sx={styleSheets.navigations}>
-          {navigation.map((value, index) => {
-            return (
-              <Link href={value.link} key={index}>
-                <a>
-                  <Typography sx={styleSheets.link}>{value.name}</Typography>
-                </a>
-              </Link>
-            );
-          })}
+        <Box sx={styleSheets.main}>
+          <Link href='/'>
+            <a>
+              <Box sx={styleSheets.imageContainer}>
+                <Image
+                  src='/logo.svg'
+                  layout='fill'
+                  objectFit='contain'
+                  priority
+                  quality={100}
+                />
+              </Box>
+            </a>
+          </Link>
+          <Box sx={styleSheets.navigations}>
+            {navigation.map((value, index) => {
+              return (
+                <Link href={value.link} key={index}>
+                  <a>
+                    <Typography sx={styleSheets.link}>{value.name}</Typography>
+                  </a>
+                </Link>
+              );
+            })}
+          </Box>
+        </Box>
+        <Box>
+          <Input
+            id='input-with-icon-adornment'
+            placeholder='Search'
+            startAdornment={
+              <InputAdornment position='start'>
+                <SearchIcon />
+              </InputAdornment>
+            }
+          />
         </Box>
       </Box>
-      <Box>
-        <Input
-          id='input-with-icon-adornment'
-          placeholder='Search'
-          startAdornment={
-            <InputAdornment position='start'>
-              <SearchIcon />
-            </InputAdornment>
-          }
-        />
-      </Box>
-    </Box>
+    </ThemeProvider>
   );
 }
 
