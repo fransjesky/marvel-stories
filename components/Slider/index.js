@@ -11,7 +11,7 @@ import 'swiper/css/effect-fade';
 function Slider({ data }) {
   const styleSheets = {
     image: {
-      height: '100vh',
+      height: '80vh',
       width: '100%',
       position: 'relative',
     },
