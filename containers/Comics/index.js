@@ -23,7 +23,7 @@ function ComicsContainer() {
         autoPlay
         loop
         muted
-        style={{ height: '45vh', width: '100%', objectFit: 'cover' }}
+        style={{ height: '80vh', width: '100%', objectFit: 'cover' }}
       />
       <Box sx={{ margin: '1rem 0' }}>
         <Grid
