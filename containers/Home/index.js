@@ -6,7 +6,7 @@ function HomeContainer() {
   return (
     <Box>
       <Image
-        src='/images/landing.jpg'
+        src='/images/landing.jpeg'
         layout='fill'
         objectFit='cover'
         quality={100}

@@ -11,6 +11,9 @@ import navigation from '../../data/navigation';
 // icon
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchIcon from '@mui/icons-material/Search';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 function Header() {
   // initialize hook
@@ -77,6 +80,12 @@ function Header() {
       letterSpacing: '0.125rem',
       textTransform: 'uppercase',
     },
+    options: {
+      width: '17rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
   };
 
   return (
@@ -118,7 +127,7 @@ function Header() {
             })}
           </Box>
         </Box>
-        <Box>
+        <Box sx={styleSheets.options}>
           <Input
             id='input-with-icon-adornment'
             placeholder='Search'
@@ -128,6 +137,12 @@ function Header() {
               </InputAdornment>
             }
           />
+          <DarkModeIcon sx={{ color: '#fff' }} />
+          <Link passHref href='https://www.marvel.com/'>
+            <a>
+              <ExitToAppIcon sx={{ color: '#fff' }} />
+            </a>
+          </Link>
         </Box>
       </Box>
     </ThemeProvider>
