@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Box, Typography, Input, InputAdornment } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import useScroll from '../../hooks/useScroll';
+import Drawer from './Drawer';
 
 // data
 import navigation from '../../data/navigation';
@@ -86,6 +87,12 @@ function Header() {
       justifyContent: 'space-between',
       alignItems: 'center',
     },
+    drawer: {
+      display: {
+        xs: 'flex',
+        lg: 'none',
+      },
+    },
   };
 
   return (
@@ -144,6 +151,9 @@ function Header() {
             </a>
           </Link>
         </Box>
+      </Box>
+      <Box sx={styleSheets.drawer}>
+        <Drawer />
       </Box>
     </ThemeProvider>
   );
