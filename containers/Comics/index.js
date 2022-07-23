@@ -14,6 +14,7 @@ function ComicsContainer() {
   }, []);
 
   const { list } = useSelector((state) => state.comics);
+  const { details } = useSelector((state) => state.comics);
 
   const styleSheets = {
     comics: {
@@ -44,7 +45,7 @@ function ComicsContainer() {
         </Grid>
         <Grid item xs={8}>
           <Box>
-            <Typography>Comic Title</Typography>
+            <Typography>{details?.title}</Typography>
             <Typography>Desc</Typography>
           </Box>
         </Grid>
