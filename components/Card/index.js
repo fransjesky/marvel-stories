@@ -11,7 +11,7 @@ function Card({ image, title, copyright }) {
       height: '20rem',
       overflow: 'hidden',
       position: 'relative',
-      transition: 'all 0.3s ease',
+      cursor: 'pointer',
       '&:after': {
         content: '""',
         position: 'absolute',
@@ -20,12 +20,6 @@ function Card({ image, title, copyright }) {
         right: '0',
         bottom: '0',
         background: 'linear-gradient(to bottom, transparent, #000000)',
-      },
-      '&:hover': {
-        cursor: 'pointer',
-        transform: 'translateY(-0.25rem)',
-        boxShadow:
-          '0 1rem 1.875rem rgba(0, 0, 0, 0.25), 0 0.625rem 0.625rem rgba(0, 0, 0, 0.25)',
       },
     },
     textContainer: {

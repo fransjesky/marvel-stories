@@ -1,3 +1,4 @@
+import { StarRate } from '@mui/icons-material';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -23,7 +24,13 @@ export const comicSlicer = createSlice({
   name: 'comics',
   initialState: {
     list: [],
+    details: null,
     status: null,
+  },
+  reducers: {
+    getComicDetails: (state, action) => {
+      state.details = action.payload;
+    },
   },
   extraReducers: {
     [getComics.pending]: (state) => {
@@ -38,5 +45,7 @@ export const comicSlicer = createSlice({
     },
   },
 });
+
+export const { getComicDetails } = comicSlicer.actions;
 
 export default comicSlicer.reducer;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import Card from '../../components/Card';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
+import Carousel from '../../components/Carousel';
 
 // redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +14,18 @@ function ComicsContainer() {
   }, []);
 
   const { list } = useSelector((state) => state.comics);
+  const { details } = useSelector((state) => state.comics);
+
+  const styleSheets = {
+    comics: {
+      margin: '1rem 0',
+    },
+    cardsContainer: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  };
 
   return (
     <Box>
@@ -25,24 +37,19 @@ function ComicsContainer() {
         muted
         style={{ height: '80vh', width: '100%', objectFit: 'cover' }}
       />
-      <Box sx={{ margin: '1rem 0' }}>
-        <Grid
-          container
-          columnSpacing={{ xs: 1, sm: 0 }}
-          rowSpacing={{ xs: 2, sm: 4 }}
-        >
-          {list?.results?.map((value, index) => {
-            return (
-              <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
-                <Card
-                  image={`${value.thumbnail?.path}/portrait_uncanny.${value.thumbnail?.extension}`}
-                  title={value.title}
-                />
-              </Grid>
-            );
-          })}
+      <Grid container columnSpacing={2} sx={styleSheets.comics}>
+        <Grid item xs={4} sx={styleSheets.cardsContainer}>
+          <Box sx={{ width: '13.5rem' }}>
+            <Carousel data={list?.results} />
+          </Box>
         </Grid>
-      </Box>
+        <Grid item xs={8}>
+          <Box>
+            <Typography>{details?.title}</Typography>
+            <Typography>Desc</Typography>
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 }
