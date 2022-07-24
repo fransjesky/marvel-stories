@@ -23,20 +23,50 @@ export const comicSlicer = createSlice({
   name: 'comics',
   initialState: {
     list: [],
+    details: null,
     status: null,
+  },
+  reducers: {
+    getComicDetails: (state, action) => {
+      state.details = action.payload;
+    },
   },
   extraReducers: {
     [getComics.pending]: (state) => {
       state.status = 'pending';
     },
     [getComics.fulfilled]: (state, action) => {
+      // get creator role
+      const creatorDetails = (roleName) => {
+        const filter =
+          action.payload.data.data.results[0].creators.items.filter(
+            (item) => item.role == roleName
+          );
+        return filter[0]?.name;
+      };
+
+      // update state
       state.status = 'success';
       state.list = action.payload.data.data;
+      state.details = {
+        image: `${action.payload.data.data.results[0].thumbnail.path}.${action.payload.data.data.results[0].thumbnail.extension}`,
+        title: action.payload.data.data.results[0].title,
+        published: action.payload.data.data.results[0].dates[0].date,
+        writer: creatorDetails('writer'),
+        editor: creatorDetails('editor'),
+        letterer: creatorDetails('letterer'),
+        penciler: creatorDetails('penciler'),
+        colorist: creatorDetails('colorist'),
+        painter: creatorDetails('painter (cover)'),
+        inker: creatorDetails('inker'),
+      };
     },
     [getComics.rejected]: (state) => {
       state.status = 'rejected';
     },
   },
 });
+
+export const { getComicDetails } = comicSlicer.actions;
 
 export default comicSlicer.reducer;

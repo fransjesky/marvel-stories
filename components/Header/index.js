@@ -35,7 +35,8 @@ function Header() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: scroll > 15 ? '#151515' : 'transparent',
+      // backgroundColor: scroll > 15 ? '#151515' : 'transparent',
+      backgroundColor: '#151515',
       transition: 'all 0.3s ease',
       position: 'fixed',
       top: '0',
@@ -82,7 +83,7 @@ function Header() {
       textTransform: 'uppercase',
     },
     options: {
-      width: '17rem',
+      width: '7.5rem',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -135,15 +136,7 @@ function Header() {
           </Box>
         </Box>
         <Box sx={styleSheets.options}>
-          <Input
-            id='input-with-icon-adornment'
-            placeholder='Search'
-            startAdornment={
-              <InputAdornment position='start'>
-                <SearchIcon />
-              </InputAdornment>
-            }
-          />
+          <SearchIcon sx={{ color: '#fff' }} />
           <DarkModeIcon sx={{ color: '#fff' }} />
           <Link passHref href='https://www.marvel.com/'>
             <a>

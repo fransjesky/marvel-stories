@@ -8,10 +8,8 @@ const nextConfig = {
   },
   images: {
     disableStaticImages: true,
-    domains: [
-      'i.annihil.us',
-    ],
+    domains: ['i.annihil.us', 'gateway.marvel.com'],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
