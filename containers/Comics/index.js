@@ -39,14 +39,17 @@ function ComicsContainer() {
       />
       <Grid container columnSpacing={2} sx={styleSheets.comics}>
         <Grid item xs={4} sx={styleSheets.cardsContainer}>
-          <Box sx={{ width: '13.5rem' }}>
+          <Box sx={{ width: '18.75rem' }}>
             <Carousel data={list?.results} />
           </Box>
         </Grid>
         <Grid item xs={8}>
           <Box>
             <Typography>{details?.title}</Typography>
-            <Typography>Desc</Typography>
+            <Typography>Published: {details?.published}</Typography>
+            <Typography>Writer: {details?.writer}</Typography>
+            <Typography>Editor: {details?.editor}</Typography>
+            <Typography>Penciler: {details?.penciler}</Typography>
           </Box>
         </Grid>
       </Grid>
