@@ -16,6 +16,8 @@ import { EffectFlip } from 'swiper';
 function Carousel({ data }) {
   const dispatch = useDispatch();
 
+  console.log('data', data);
+
   const getDetails = (e) => {
     // get creator role
     const creatorDetails = (roleName) => {
@@ -27,12 +29,18 @@ function Carousel({ data }) {
 
     // payload init
     const payload = {
+      image: `${data[e.activeIndex].thumbnail?.path}.${
+        data[e.activeIndex].thumbnail.extension
+      }`,
       title: data[e.activeIndex].title,
       published: data[e.activeIndex].dates[0].date,
       writer: creatorDetails('writer'),
       editor: creatorDetails('editor'),
       letterer: creatorDetails('letterer'),
       penciler: creatorDetails('penciler'),
+      colorist: creatorDetails('colorist'),
+      painter: creatorDetails('painter (cover)'),
+      inker: creatorDetails('inker'),
     };
 
     // dispatch to redux

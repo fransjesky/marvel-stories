@@ -12,6 +12,7 @@ function Card({ image, title }) {
       overflow: 'hidden',
       position: 'relative',
       cursor: 'pointer',
+      dropShadow: '0 26px 24px -16px rgb(0 0 0 / 40%)',
     },
   };
 
