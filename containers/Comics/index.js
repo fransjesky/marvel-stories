@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { DateTime } from 'luxon';
 import { Box, Grid, Typography } from '@mui/material';
 import Carousel from '../../components/Carousel';
-import { DateTime } from 'luxon';
+import Loader from '../../components/Loader';
 
 // redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -104,14 +105,15 @@ function ComicsContainer() {
   return (
     <Box sx={styleSheets.comics}>
       {loading ? (
-        <video
-          src='/assets/intro.mp4'
-          type='video/mp4'
-          autoPlay
-          loop
-          muted
-          style={{ height: '100vh', width: '100%', objectFit: 'cover' }}
-        />
+        // <video
+        //   src='/assets/intro.mp4'
+        //   type='video/mp4'
+        //   autoPlay
+        //   loop
+        //   muted
+        //   style={{ height: '100vh', width: '100%', objectFit: 'cover' }}
+        // />
+        <Loader />
       ) : (
         <>
           {details ? (
